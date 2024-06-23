@@ -110,3 +110,48 @@
     font-weight: bolder;
     font-size: 1.1em;
 }
+
+/* Media quearies */
+
+@media (max-width: 600px) {
+    .Login {
+        max-height: 100vh;
+    }
+
+    .Login-wrapper {
+        /* background-color: aqua; */
+        width: 100%;
+        margin: auto;
+        padding: 2rem;
+        display: grid;
+        border-radius: 0rem;
+        background: white;
+        box-shadow: none;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+
+    }
+    
+    .Login-video {
+
+        margin: auto;
+        width: 90%;
+    }
+
+
+}
+
+@media (max-width: 450px) {
+    .Login {
+        height: fit-content;
+    }
+
+    .Login-video {
+
+        margin: auto;
+        width: 80%;
+    }
+
+
+
+}

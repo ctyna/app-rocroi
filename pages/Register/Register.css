@@ -97,10 +97,51 @@
 .Register-h3 {
     font-weight: 600;
     font-size: 1.1em;
+
+}
+
+.Registers-h3 {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin: auto;
+}
+
+.Register-message {
+    color: green;
+    font-size: 1.1em;
 }
 
 .Register-span:hover {
     color: navy;
     text-decoration: underline;
     cursor: pointer;
+    font-weight: bold;
+}
+
+/* Media quearies */
+
+@media (max-width: 600px) {
+    .Register {
+        max-height: 100vh;
+    }
+
+    .Register-wrapper {
+        /* background-color: aqua; */
+        width: 100%;
+        margin: auto;
+        padding: 2rem;
+        display: grid;
+        border-radius: 0rem;
+        background: white;
+        box-shadow: none;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .Register {
+        height: fit-content;
+    }
 }

@@ -83,9 +83,9 @@ export const Login = () => {
 
                         <form ref={inicioSesion} onSubmit={postLogin} className='Login-form'>
                             <h3 className='Login-h3'>Usuario</h3>
-                            <input type="text" name="username" placeholder='Usuario' className='Login-input' />
+                            <input type="text" name="username" placeholder='Usuario' className='Login-input' required />
                             <h3 className='Login-h3'>Contraseña</h3>
-                            <input type="password" name='pass' placeholder='Contraseña' className='Login-input' />
+                            <input type="password" name='pass' placeholder='Contraseña' className='Login-input' required/>
                             <input type="submit" value="Iniciar sesión"
                                 className='Login-submit' />
 

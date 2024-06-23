@@ -1,0 +1,43 @@
+.Header{
+    width: 75%;
+    margin: auto;
+    background-color: white;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+.Header-left{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+
+}
+.Header-h1{
+    display: none;
+}
+.Header-logo{
+    width: 12%;
+}
+.Header-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.2em;
+
+}
+.Header-right{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+
+}

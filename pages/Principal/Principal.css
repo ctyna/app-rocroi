@@ -1,0 +1,28 @@
+.Insight, .Mapa{
+    width: 75%;
+    /* background-color: aqua; */
+    margin: 7rem auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3rem;
+
+}
+
+.Insight-h2{
+    text-transform: capitalize;
+    font-style: italic;
+    font-size: 5em;
+   
+    font-weight: bold;
+   
+  
+}
+.Insight-h3{
+    font-size: 2em;
+}
+.Mapa-h2{
+    font-size: 3em;
+}
