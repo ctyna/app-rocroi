@@ -1,0 +1,106 @@
+.Register {
+    background-color: var(--gris);
+    max-width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.Register-h1 {
+    display: none;
+}
+
+
+.Register-wrapper {
+    /* background-color: aqua; */
+    width: 80%;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 20px;
+    background: var(--gris);
+    box-shadow: 34px 34px 27px #bebebe,
+        -34px -34px 27px #ffffff;
+
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1rem;
+
+}
+
+.Register-logo {
+    width: 20%;
+    object-fit: cover;
+    /* background-color: aqua; */
+}
+
+.Register-h2 {
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.Register-info {
+    /* background-color: azure; */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.Register-submit {
+    background-color: var(--amarillo);
+    padding: 1rem 2rem;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    margin: 0 auto 2rem;
+    font-size: 1.1em;
+}
+
+.Register-submit:hover {
+    font-weight: 600;
+
+}
+
+.Register-input {
+    width: 100%;
+    padding: 1rem 2rem;
+    border: .0625rem solid var(--negro);
+    border-radius: .625rem;
+}
+
+.Register-input::placeholder:hover {
+    font-style: italic;
+}
+
+.Register-form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+
+}
+
+.Register-video {
+    width: 100%;
+    height: 55vh;
+    object-fit: cover;
+}
+
+.Register-h3 {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.Register-span:hover {
+    color: navy;
+    text-decoration: underline;
+    cursor: pointer;
+}

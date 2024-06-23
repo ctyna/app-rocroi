@@ -59,37 +59,58 @@ export const Login = () => {
 
     }
 
-    // Limpieza del formulario y error
+    // Limpieza del formulario
     const cleanForm = () => {
         const { current: form } = inicioSesion
         form["username"].value = '',
-            form["pass"].value = '',
-            setError('')
+        form["pass"].value = ''
+        
+    }
+
+    const goRegister = () =>{
+        navigate('/register')
     }
     return (
         <>
-
+            {/* Login del usuario  */}
             <div className="Login">
 
                 <div className="Login-wrapper">
                     <div className="Login-info">
-                        <img src="../../src/assets/rocroi.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Login-logo" loading='eager' />
-                        <h1>Login</h1>
+                        <h1 className='Login-h1'>RocRoi centro de deportes de aventura</h1>
+                        <img src="../../src/assets/rocroi_logo.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Login-logo" loading='eager' />
+                        <h2 className='Login-h2' >Iniciar sesión</h2>
 
                         <form ref={inicioSesion} onSubmit={postLogin} className='Login-form'>
-                            <input type="text" name="username" placeholder='Usuario' />
-                            <input type="password" name='pass' placeholder='Contraseña' />
-                            <input type="submit" value="Iniciar sesión" />
+                            <h3 className='Login-h3'>Usuario</h3>
+                            <input type="text" name="username" placeholder='Usuario' className='Login-input' />
+                            <h3 className='Login-h3'>Contraseña</h3>
+                            <input type="password" name='pass' placeholder='Contraseña' className='Login-input' />
+                            <input type="submit" value="Iniciar sesión"
+                                className='Login-submit' />
+
+                            <h3 className='Login-h3'>¿No tienes una cuenta?
+                                <span className='Login-span' onClick={goRegister}>  Regístrate</span></h3>
+
 
                         </form>
 
+
                         {error && <MensajeError />}
                     </div>
-                    <div className="Login-images">
-                        <img className='Login-img' src="" alt="" />
+                    <div className="Login-asset">
+                        <video className='Login-video' autoPlay muted playsInline loop  >
+                            <source src="../../src/assets/rafting_clasico.mp4" type='video/mp4' />
+                            <source src="../../src/assets/rafting_clasico.webm" type='video/webm' />
+
+                        </video>
+
+
                     </div>
 
+
                 </div>
+
             </div>
 
         </>
@@ -101,7 +122,9 @@ const MensajeError = () => {
     return (
         <>
             <div className="Login-message">
-                Nombre de usuario o contraseña incorrecta
+                <h4 className="Login-error">
+                    El usuario o contraseña no se corresponden con ninguna cuenta
+                </h4>
             </div>
 
 
