@@ -1,0 +1,132 @@
+.Header {
+    width: 75%;
+    margin: auto;
+    background-color: white;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Alineación Header izquierda (logo + nav) */
+.Header-left {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+
+.Header-h1 {
+    display: none; 
+}
+
+.Header-logo {
+    width: 12%;
+}
+
+.Nav-ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+  
+    
+    font-size: var(--h3);
+}
+
+.Nav-li {
+    position: relative;
+}
+/* Animación debajo del texto para que el usuario sepa dónde se encuentra */
+
+.Nav-li::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: .125rem;
+   
+    transform: scaleX(0);
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+.Nav-li:hover::after {
+    transform: scaleX(1);
+    background-color: var(--amarillo); 
+}
+
+
+.Subnav-ul {
+ 
+    width:30rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) 1.2fr; 
+    background-color: var(--gris);
+    position: absolute;
+    top: 100%;
+    left: 0;
+  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   
+   
+}
+.Subnav-selectores{
+   padding: 0.5rem;
+   cursor: pointer;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+
+
+.Subnav-li {
+    margin: auto;
+    cursor: pointer;
+}
+
+
+.Subnav-li::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: .125rem;
+   
+    transform: scaleX(0);
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+.Subnav-li:hover::after {
+    transform: scaleX(1);
+    background-color: var(--amarillo); 
+    font-weight: 500;
+}
+
+.Subnav-list{
+    padding: 1rem 2rem;
+    background-color: var(--amarillo);
+}
+.Subnav-h3{
+   font-weight: 500;
+}
+
+.Subnav-h4{
+ 
+    cursor: pointer;
+}
+
+
+.Subnav-h4::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: .125rem;
+   
+    transform: scaleX(0);
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+.Subnav-h4:hover::after {
+    transform: scaleX(1);
+    background-color: black; 
+   
+}

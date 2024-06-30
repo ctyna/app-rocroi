@@ -15,9 +15,15 @@
   --amarillo : #F7E325;
   --gris: #F7F9F2;
   --rojo : #E20A17;
+  
   /* Tipografía */
   --tipo-principal: "Barlow", sans-serif;
   --tipo-secundaria: Verdana;
+
+
+  /* Font size (títulos secciones) */
+  --h2 :  2em;
+  --h3 : 1.2em;
 }
 
 /* Las adaptamos al modo oscuro */

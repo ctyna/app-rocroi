@@ -1,0 +1,12 @@
+.Actividades{
+    width: 75%;
+    margin: auto;
+    /* background-color: antiquewhite; */
+}
+
+.Actividades-wrapper{
+   margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}

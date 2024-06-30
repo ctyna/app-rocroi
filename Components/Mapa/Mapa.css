@@ -1,0 +1,19 @@
+
+.Mapa{
+    width: 75%;
+    /* background-color: aqua; */
+    margin: 7rem auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3rem;
+
+}
+
+
+.Mapa-h2{
+    font-size: var(--h2);
+    font-weight: bold;
+}
