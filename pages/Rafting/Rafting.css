@@ -1,0 +1,46 @@
+.Rafting{
+    width: 75%;
+    margin: auto;
+    /* background-color: antiquewhite; */
+}
+
+.Rafting-section{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+   margin: 2rem auto;
+    
+}
+.Rafting-h2{
+    font-size: var(--h2);
+    font-weight: bold;
+}
+.Rafting-img{
+    width: 60%;
+    background-color: var(--amarillo);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+.Rafting-p{
+    font-size: calc(var(--h3) + 0.3em);
+    font-weight: 500;
+}
+.Info{
+    width: 100%;
+    margin: 2rem auto;
+    background-color: var(--gris);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.Info-container{
+    padding: 2rem;
+    border: 1px solid black;
+}
+.Info-ul{
+font-size: var(--h3);
+font-weight: bold;
+}
