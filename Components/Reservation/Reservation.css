@@ -1,0 +1,55 @@
+.Reservas{
+    border-radius: 1.25rem;
+    margin: 0 0 5rem;
+    max-width: 100%;
+    
+   
+    padding: 2rem 2rem 4rem;
+    background-color: var(--amarillo);
+}
+.Reservas-h2{
+    font-size: var(--h2);
+    padding: 2rem 0;
+}
+.Reservas-wrapper{
+    width: 100%;
+   
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 1rem;
+}
+.Reservas-invisible{
+    display: none;
+}
+
+
+
+.Reservas-input, .Reservas-selector{
+    width: 100%;  
+    padding: 0.5rem;
+    font-size: 1rem 0;
+    background-color: var(--gris);
+    border-radius: .25rem;
+   
+    cursor: pointer;
+    
+ 
+}
+
+.Reservas-option{
+  text-align: center;
+}
+
+.Reservas-btn{
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: var(--gris);
+    border-radius: 1rem;
+    cursor: pointer;
+   font-size: var(--h3);
+}
+.Reservas-btn:hover{
+    font-weight: bolder;
+    box-shadow: 0.1rem 0.1rem  var(--negro);
+}

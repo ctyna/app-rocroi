@@ -46,6 +46,7 @@ export const Login = () => {
                 if (data.login) {
                     setLogin(true)
                     setError(false)
+                    localStorage.setItem('usuario' , JSON.stringify({login:true}))
                 } else {
                     setLogin(false)
                     setError(true)

@@ -2,6 +2,11 @@ import { Mapa } from '../../Components/Mapa/Mapa'
 import { Header } from '../../Components/Header/Header'
 import './Principal.css'
 import { TopActividades } from '../../Components/TopActividades/TopActividades'
+import { Footer } from '../../Components/Footer/Footer'
+
+import rocroiMp4 from '../../src/assets/rocroi_banner.mp4'
+import rocroiWebm from '../../src/assets/rocroi_banner.webm'
+
 
 export const Principal = () => {
     return (
@@ -9,10 +14,11 @@ export const Principal = () => {
             <Header />
             <main className="Main">
                 <video muted autoPlay loop playsInline className='Main-video' >
-                    <source src='../../src/assets/rocroi_banner.mp4' />
-                    <source src='../../src/assets/rocroi_banner.webm' />
+                <source src={rocroiMp4} type='video/mp4' />
+                <source src={rocroiWebm} type='video/webm' />
                
-                        <track kind="captions" src="subtitles_es.vtt" srcLang="es" label="Español"></track>
+                <track kind="captions" src="../../src/assets/subtitles_es.vtt" srcLang="es" label="Español" />
+
                 </video>
 
                 <div className="Insight">
@@ -22,6 +28,7 @@ export const Principal = () => {
 
                 <TopActividades />
                 <Mapa/>
+                <Footer/>
 
 
 

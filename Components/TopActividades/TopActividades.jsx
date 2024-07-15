@@ -42,7 +42,7 @@ export const TopActividades = () => {
                     <div className="Top-wrapper">
                         {top.length == 0 && <p>Cargando Actividades</p>}
                         {top.length != 0 && top.map((eachTop) =>
-                            <Article key={eachTop.id} {...eachTop} />)}
+                            <Article key={eachTop._id} {...eachTop} />)}
                     </div> 
                  </div>
             </>
@@ -52,7 +52,7 @@ export const TopActividades = () => {
 }
 const Article = (props) => {
 
-    const { title, intro, alt, src, src_web } = props
+    const { title, intro, alt, src, src_web, name } = props
 
     return (
         <>
@@ -63,7 +63,7 @@ const Article = (props) => {
                     <img className='Top-img' width={300} height={350} src={`/assets/${src}`} alt={alt} />
                 </picture>
                 <div className="Top-text">
-                    <h3 className="Top-h3"> {title} </h3>
+                    <h3 className="Top-h3"> {name} </h3>
                     <p className="Top-p"> {intro}   </p>
                     <NavLink className="Top-btn" to={`/actividades/${title}`}>Reservar</NavLink>
 

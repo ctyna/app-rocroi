@@ -1,17 +1,17 @@
-.Top{
+.Top {
     width: 75%;
     margin: auto;
     /* background-color: antiquewhite; */
 }
 
-.Top-wrapper{
-   margin: 2rem auto;
+.Top-wrapper {
+    margin: 2rem auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
 
-.Top-article{
+.Top-article {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -21,21 +21,24 @@
     border-radius: 1.25rem;
     transition: box-shadow 0.5 ease;
 }
-.Top-article:hover{
-    box-shadow: 0.5rem 0.5rem  var(--amarillo);
+
+.Top-article:hover {
+    box-shadow: 0.5rem 0.5rem var(--amarillo);
 }
 
-.Top-h2{
+.Top-h2 {
     font-size: var(--h2);
     font-weight: bold;
 }
-.Top-img{
+
+.Top-img {
     object-fit: cover;
     width: 100%;
     height: 40vh;
-    border-radius: 1rem 1rem 0 0 ;
+    border-radius: 1rem 1rem 0 0;
 }
-.Top-text{
+
+.Top-text {
     padding: 2rem;
     display: flex;
     flex-flow: column nowrap;
@@ -43,17 +46,24 @@
     align-items: flex-start;
     gap: 1rem;
 }
-.Top-h3{
+
+.Top-h3 {
     font-size: var(--h3);
     font-weight: bold;
     text-transform: capitalize;
-    
-   
+
+
+
 
 }
-.Top-btn{
-    width: 90%; 
-   
+
+.Top-p {
+    height: 15vh;
+}
+
+.Top-btn {
+    width: 90%;
+
     margin: 1rem auto 0;
     padding: 1rem 2rem;
     border-radius: 1rem;
@@ -63,10 +73,18 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-   
+
 
 }
-.Top-btn:hover{
+
+.Top-btn:hover {
     font-weight: bolder;
-    box-shadow: 0.1rem 0.1rem  var(--negro);
+    box-shadow: 0.1rem 0.1rem var(--negro);
+}
+
+
+@media (max-width: 685px) {
+    .Top-p{
+        height: 12vh;
+    }
 }

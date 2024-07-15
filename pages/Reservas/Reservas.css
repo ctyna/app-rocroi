@@ -1,0 +1,85 @@
+.Reserva{
+    width: 75%;
+    /* background-color: aqua; */
+    margin: 7rem auto;
+}
+
+.Reserva-h1{
+    font-size: calc(var(--h2) + 1em);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.Reserva-container{
+    margin: 2rem auto;
+ display: flex;
+ flex-flow:  column nowrap;
+ justify-content: flex-start;
+ align-items: flex-start;
+
+}
+.Reserva-ul{
+  width: 50%;
+    margin:2rem auto;
+    padding: 2rem;
+    border-radius: 20px;
+    background: var(--gris);
+    transition: box-shadow 0.2s ease;
+    
+}
+
+.Reserva-ul:hover{
+    box-shadow: 1.25rem 1.25rem 1.6875rem var(--amarillo);
+}
+.Reserva-span{
+    font-weight: bold;
+}
+.Reserva-btns{
+    margin: 2rem auto 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: center;
+}
+.Reserva-btnacc, .Reserva-completada{
+  
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: var(--amarillo);
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+.Reserva-btnacc:hover{
+    font-weight: bolder;
+    box-shadow: 0.1rem 0.1rem  var(--negro);
+}
+.Reserva-ok{
+    font-size: 1.2em;
+}
+.Reservas-span{
+    font-weight: bold;
+}
+
+/* Media quearies */
+
+@media (max-width :1000px){
+    .Reserva-ul{
+        width: 100%;
+    }
+    .Reserva-btns{
+        gap: 2rem;
+    }
+}
+
+@media (max-width :310px){
+    .Reserva{
+       width: 90%;
+    }
+     }
+     
+     

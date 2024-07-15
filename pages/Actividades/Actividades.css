@@ -10,3 +10,14 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
+.Actividades-h1{
+    font-size: calc(var(--h2) + 1em);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+/* Media quearies */
+@media (max-width : 685px){
+.Actividades-h1{
+    font-size:calc(var(--h3) + 0.5em);
+}
+}

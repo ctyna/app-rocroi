@@ -13,13 +13,13 @@
    margin: 2rem auto;
     
 }
-.Rafting-h2{
+.Rafting-h1{
     font-size: var(--h2);
     font-weight: bold;
 }
 .Rafting-img{
     width: 60%;
-    background-color: var(--amarillo);
+    /* background-color: var(--amarillo); */
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -43,4 +43,32 @@
 .Info-ul{
 font-size: var(--h3);
 font-weight: bold;
+
+display: flex;
+flex-flow: column nowrap;
+justify-content: flex-start;
+align-items: flex-start;
+
 }
+
+
+/* Media quearies */
+
+@media (max-width :685px){
+  .Rafting-h2, .Reservas-h2{
+    font-size: 1.8em;
+  }
+  .Rafting-p{
+    font-weight: 400;
+    font-size: 1.2em;
+  }
+}
+
+
+@media (max-width :310px){
+ .Rafting{
+    width: 90%;
+ }
+  }
+  
+  

@@ -23,3 +23,15 @@
 .Insight-h3{
     font-size: 2em;
 }
+
+
+/* Media quearies */
+
+@media (max-width :685px){
+    .Insight-h2{
+        font-size: 2.2em;
+    }
+    .Insight-h3{
+        font-size: 1.4em;
+    }
+}

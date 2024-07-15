@@ -11,10 +11,11 @@
 */
 /* Aquí definimos las Custom properties */
 :root {
-  --negro: #393939;
+  --negro: #000000;
   --amarillo : #F7E325;
   --gris: #F7F9F2;
   --rojo : #E20A17;
+  --blanco : #ffff;
   
   /* Tipografía */
   --tipo-principal: "Barlow", sans-serif;
@@ -25,13 +26,9 @@
   --h2 :  2em;
   --h3 : 1.2em;
 }
+/* 
 
-/* Las adaptamos al modo oscuro */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --negro: #ececec;
-  }
-}
+
 /* Opcional */
 /* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
 /* Opcional */

@@ -1,12 +1,27 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './Header.css'
-import { useState, useEffect, createContext, act } from 'react'
+import { useState, useEffect, createContext} from 'react'
 
 const HeaderContext = createContext()
 
 export const Header = () => {
     const [actividades, setActividades] = useState([])
-    const [temporada, setTemporada] = useState([])
+
+    // Menú responsive 
+    const [menu, setMenu] = useState(false)
+    const toogle = () => setMenu(!menu)
+
+    //    Extraído de ChatGPT (uso para indicar si se encuentra en principal 
+    //    que sea h1, sino no)
+    const location = useLocation()
+
+
+    // LocalStorage cierre de sesión
+    const navigate = useNavigate()
+    const cerrarSesión = () =>{
+        localStorage.removeItem('usuario')
+        navigate('/')
+    }
 
     const pedirActividades = async () => {
         let controller = new AbortController()
@@ -23,10 +38,7 @@ export const Header = () => {
     }
 
 
-    const filtrarActividad = (season) => {
-        const filtradasActividades = season ? actividades.filter((actividad) => actividad.season === season) : actividades
-        setTemporada(filtradasActividades)
-    }
+
 
 
     useEffect(() => {
@@ -37,72 +49,44 @@ export const Header = () => {
         <HeaderContext.Provider value={{ actividades }}>
             <>
                 <header className="Header">
-                    <div className="Header-left">
-                        <h1 className='Header-h1'>RocRoi centro de deportes de aventura</h1>
+                    <div className="Header-wrapper">
+                        {location.pathname === '/principal' && (
+                            <h1 className='Header-h1'>RocRoi centro de deportes de aventura</h1>
+                        )}
 
 
                         <img src="../../src/assets/roc_logo.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Header-logo" loading='eager' />
-                        <nav className="Header-nav Nav">
+                        {/*SVG para responsive + toogle */}
+                        <svg onClick={toogle} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="Header-svg" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                        </svg>
+                        {/* Booleano con la propiedad isActive */}
+                        <nav className={`Header-nav Nav ${menu ? 'isActive' : ''}`}>
                             <ul className="Nav-ul">
                                 <li className="Nav-li">
                                     <NavLink to='/principal'>Home</NavLink>
                                 </li>
-
-                                {/* Creación de un submenú con todas las actividades */}
                                 <li className="Nav-li">
                                     <NavLink to="/actividades">Actividades</NavLink>
-                                    {/* <ul className="Subnav-ul">
-                                        <div className="Subnav-selectores">
-                                        <li className='Subnav-li' onClick={() => filtrarActividad('todo')}>Todo el año</li>
-                                        <li className='Subnav-li' onClick={() => filtrarActividad('verano')}>Verano</li>
-                                        <li className='Subnav-li' onClick={() => filtrarActividad('invierno')}>Invierno</li> 
-                                        
-                                       
-                                        </div>
-                                       
-                                     
-                                    </ul> */}
                                 </li>
                                 <li className="Nav-li">Centros</li>
-                                <li className="Nav-li">Grupos</li>
+                                <li className="Nav-li">
+                                    <NavLink to='/reservas'>Reservas</NavLink>
+                                </li>
+                                <li onClick={cerrarSesión} className="Nav-li">
+                                    Cerrar sesión
+                                </li>
+
+
                             </ul>
                         </nav>
                     </div>
-                    <div className="Header-right">
-                        <ul className="ul-right">
-                            <li className="li-right">
-                                Reservas
-                            </li>
-                            <li className="li-right">
-                                Espacio personal
-                            </li>
-                        </ul>
-                    </div>
+
 
                 </header>
-                {/* <div className="Subnav-list">
-                                            <h3 className='Subnav-h3'>Actividades disponibles:</h3>
-                                            {temporada.length === 0 && <p>Selecciona estación</p>}
-                                            {temporada.length != 0 && temporada.map((eachActividad) => (
-                                                <Submenu key={eachActividad.id} {...eachActividad} />
-                                            ))}
-                                        </div> */}
 
 
             </>
         </HeaderContext.Provider>
     )
 }
-
-// const Submenu = (props) => {
-//     const {title} = props
-//     return (
-//         <>
-//         <div className="Subnav-container">
-       
-//             <NavLink className="Subnav-h4" to={`/actividades/${title}`}>{title}</NavLink>
-        
-//     </div>
-//     </>
-//     )
-// }

@@ -1,5 +1,5 @@
 import './CardActividad.css'
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 // Este componente esta creado a partir de TOPActividades ya que quiero reutilizarlo en actividades general
 
@@ -31,14 +31,14 @@ export const Card = () => {
         <>
             {card.length == 0 && <p>Cargando Actividades</p>}
             {card.length != 0 && card.map((eachCard) =>
-                <article key={eachCard.title} className="Card-article">
+                <article key={eachCard._id} className="Card-article">
                     <picture className="Card-picture">
                         <source srcSet={`/assets/${eachCard.src}`} type="image/jpg" media="(max-width:1200px)" />
                         <source srcSet={`/assets/${eachCard.src_web}`} type="image/webp" media="(max-width:1200px)" />
                         <img className='Card-img' width={300} height={350} src={`/assets/${eachCard.src}`} alt={eachCard.alt} />
                     </picture>
                     <div className="Card-text">
-                        <h3 className="Card-h3"> {eachCard.title} </h3>
+                        <h2 className="Card-h2"> {eachCard.name} </h2>
                         <p className="Card-p"> {eachCard.intro}   </p>
                         <NavLink className="Card-btn" to={`/actividades/${eachCard.title}`}>Reservar</NavLink>
 

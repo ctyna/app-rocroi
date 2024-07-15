@@ -1,0 +1,52 @@
+.Footer{
+    width: 100%;
+    
+    background-color: var(--negro);
+ 
+    color: var(--blanco);
+   
+}
+.Footer-wrapper{
+    width: 75%;
+    padding: 2rem 0;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+}
+ .Footer-links, .Footer-contact, .Footer-ul{
+    display: flex;
+    flex-flow:  column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Footer-awards{
+   
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+   
+}
+.Footer-img , .Footer-logo{
+    
+    width: 25%;
+    object-fit: cover;
+}
+
+.Footer-li::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: .125rem;
+
+    transform: scaleX(0);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.Footer-li:hover::after {
+    transform: scaleX(1);
+    background-color: var(--blanco);
+}
