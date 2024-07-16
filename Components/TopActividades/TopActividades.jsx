@@ -12,6 +12,8 @@ export const TopActividades = () => {
 
     const [top, setTop] = useState([])
 
+    const {VITE_API} = import.meta.env
+
     const pedirDatos = async () => {
         let controller = new AbortController()
         let options = {
@@ -19,7 +21,7 @@ export const TopActividades = () => {
             signal: controller.signal
         }
 
-        await fetch('http://localhost:3000/principal', options)
+        await fetch(`${VITE_API}/principal`, options)
             .then(res => res.json())
             .then(data => setTop(data.filter(actividad => actividad.top === true)))
             .catch(err => console.log(err))
