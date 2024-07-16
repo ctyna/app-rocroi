@@ -45,6 +45,9 @@ export const Header = () => {
                             <li className="Nav-li">
                                 <NavLink to="/actividades">Actividades</NavLink>
                             </li>
+                            <li className="Nav-li">
+                                <NavLink to='/centros'>Centros</NavLink>
+                            </li>
 
                             <li className="Nav-li">
                                 <NavLink to='/reservas'>Reservas</NavLink>

@@ -1,0 +1,14 @@
+.Vacia-wrapper{
+    width: 75%;
+    margin: auto;
+}
+
+.Vacia-h2{
+    margin: 2rem 0;
+    font-size: var(--h3);
+}
+
+.Vacia-h3{
+    margin: 4rem 0 2rem;
+    font-size: var(--h2);
+}

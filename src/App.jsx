@@ -13,6 +13,7 @@ import { VuelosGlobo } from '../pages/VuelosGlobo/VuelosGlobo'
 import { Parapente } from '../pages/Parapente/Parapente'
 import { Barranquismo } from '../pages/Barranquismo/Barranquismo'
 import { Escalada } from '../pages/Escalada/Escalada'
+import { Vacia } from '../pages/Vacia/Vacia'
 
 function App() {
 
@@ -31,10 +32,11 @@ function App() {
             <Route path='parapente' element={<Parapente />} />
             <Route path='barranquismo' element={<Barranquismo />} />
             <Route path='escalada' element={<Escalada />} />
+            <Route path='nopage' element={<Vacia />} />
 
           </Route>
          
-          <Route path='/usuario' element={<Usuario />} />
+          <Route path='/centros' element={<Centros />} />
           <Route path='/reservas' element={<Reservas />} />
 
 

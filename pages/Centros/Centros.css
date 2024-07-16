@@ -1,0 +1,31 @@
+.Centros{
+    width: 75%;
+    margin: auto;
+}
+
+.Centros-h1{
+    margin: 1rem 0;
+    font-size: var(--h2);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.Centros-h2{
+    margin: 4rem 0;
+    font-size: var(--h2);
+}
+
+.Centros-p{
+    font-size: var(--h3);
+}
+
+.Centros-image{
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.Centros-img{
+    object-fit: cover;
+}

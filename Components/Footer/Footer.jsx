@@ -24,7 +24,10 @@ export const Footer = () => {
                             <li className="Footer-li">
                                 <NavLink to="/actividades">Actividades</NavLink>
                             </li>
-                            <li className="Footer-li">Centros</li>
+                            <li className="Footer-li">
+                                <NavLink to="/centros">Centros</NavLink>
+                            </li>
+                           
                             <li className="Footer-li">
                                 <NavLink to='/reservas'>Reservas</NavLink>
                             </li>
