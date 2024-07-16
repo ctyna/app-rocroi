@@ -9,6 +9,8 @@ export const Login = () => {
     const inicioSesion = useRef()
     const navigate = useNavigate()
 
+    const {VITE_API} = import.meta.env
+
     // Navegación => datos : true
     useEffect(() => {
         if (login) {
@@ -40,7 +42,7 @@ export const Login = () => {
 
 
 
-        await fetch('http://localhost:3000/login', options)
+        await fetch(`${VITE_API}/login`, options)
             .then(res => res.json())
             .then(data => {
                 if (data.login) {

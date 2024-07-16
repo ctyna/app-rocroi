@@ -1,55 +1,58 @@
-// Rafting.js
-import './Rafting.css';
-import { Header } from '../../Components/Header/Header';
-import { createContext, useState, useEffect } from 'react';
-import { Footer } from '../../Components/Footer/Footer';
-import { Reservation } from '../../Components/Reservation/Reservation';
+import './Escalada.css'
+import { useEffect, useState } from 'react'
+import { Footer } from '../../Components/Footer/Footer'
+import { Header } from '../../Components/Header/Header'
+import { Reservation } from '../../Components/Reservation/Reservation'
 
-// GET RAFTING Y TODOS SUS APARTADOS
-const RafContext = createContext()
 
-export const Rafting = () => {
-    const [rafting, setRafting] = useState([])
+export const Escalada = () =>{
+ 
+    const [escalada, setEscalada] = useState([])
 
     const {VITE_API} = import.meta.env
 
-    const pedirInfo = async () => {
+    const pedirEscalada = async () => {
         let controller = new AbortController()
         let options = {
             method: 'get',
             signal: controller.signal
         }
 
-        await fetch(`${VITE_API}/actividades/rafting`, options)
+        await fetch(`${VITE_API}/actividades/escalada`, options)
             .then(res => res.json())
-            .then(data => setRafting(data))
+            .then(data => setEscalada(data))
             .catch(err => console.log(err))
             .finally(() => controller.abort())
     }
 
+
     useEffect(() => {
-        pedirInfo()
+        pedirEscalada()
     }, [])
 
     return (
-        <RafContext.Provider value={{ rafting }}>
-            <>
-                <Header />
-                <main className="Activity">
-                    <div className="Activity-wrapper">
-                        {rafting.length == 0 && <p>Cargando información</p>}
-                        {rafting.length != 0 && rafting.map((eachRafting) =>
-                            <Main key={eachRafting._id} {...eachRafting} />)}
-                        <Reservation />
-                    </div>
-                </main>
-                <Footer />
-            </>
-        </RafContext.Provider>
+
+        <>
+            <Header />
+            <main className="Activity">
+                <div className="Activity-wrapper">
+                    {escalada.length === 0 && <p>Cargando información</p>}
+                    {escalada.length !== 0 && escalada.map((eachFerrata) =>
+                        <Principal key={eachFerrata._id} {...eachFerrata} />)}
+
+
+                    <Reservation />
+                </div>
+            </main>
+
+
+
+            <Footer />
+        </>
     )
 }
 
-const Main = (props) => {
+const Principal = (props) => {
     const { title, src, info, included, difficulty, stuff, apt, precio } = props
     return (
         <>
@@ -74,23 +77,22 @@ const Imagenes = (props) => {
     const { general, specific, view } = props
     return (
         <>
-            <img src={`/assets/${general}`} width={400} height={400} alt="general" loading='lazy' />
-            <img src={`/assets/${specific}`} width={400} height={400}alt="specific" loading='lazy' />
-            <img src={`/assets/${view}`}  width={400} height={400} alt="view" loading='lazy' />
+            <img className='Activity-photo' width={400} height={400}  src={`/assets/${general}`} alt="general" loading='lazy' />
+            <img className='Activity-photo' width={400} height={400}  src={`/assets/${specific}`} alt="specific" loading='lazy' />
+            <img className='Activity-photo' width={400} height={400} src={`/assets/${view}`} alt="view" loading='lazy' />
         </>
-    )
+    );
 }
 
 const Incluido = (props) => {
-    const { guide, clothes, transport, insurance } = props
+    const { guide, material, insurance } = props
     return (
         <>
             <div className="Info-container">
                 <h2 className='Info-h2'>Incluido en el precio</h2>
                 <ul className="Info-ul">
                     <li className='Info-list'> {guide} </li>
-                    <li className='Info-list'> {clothes} </li>
-                    <li className='Info-list'> {transport} </li>
+                    <li className='Info-list'> {material} </li>
                     <li className='Info-list'> {insurance} </li>
                 </ul>
             </div>
@@ -99,14 +101,13 @@ const Incluido = (props) => {
 }
 
 const Dificultad = (props) => {
-    const { level, description, duration } = props
+    const { level, duration } = props
     return (
         <>
             <div className="Info-container">
                 <h2 className='Info-h2'>Dificultad de la actividad</h2>
                 <ul className="Info-ul">
                     <li className='Info-list'> {level} </li>
-                    <li className='Info-list'> {description} </li>
                     <li className='Info-list'> {duration} </li>
                 </ul>
             </div>
@@ -115,14 +116,14 @@ const Dificultad = (props) => {
 }
 
 const Elementos = (props) => {
-    const { bikini, cream } = props
+    const { dress, food } = props
     return (
         <>
             <div className="Info-container">
                 <h2 className='Info-h2'>Qué hay que llevar</h2>
                 <ul className="Info-ul">
-                    <li className='Info-list'> {bikini} </li>
-                    <li className='Info-list'> {cream} </li>
+                    <li className='Info-list'> {dress} </li>
+                    <li className='Info-list'> {food} </li>
                 </ul>
             </div>
         </>
@@ -130,15 +131,14 @@ const Elementos = (props) => {
 }
 
 const Apto = (props) => {
-    const { swim, age, mayor } = props
+    const { age, exclusion } = props
     return (
         <>
             <div className="Info-container">
                 <h2 className='Info-h2'>Quién puede realizar esta actividad</h2>
                 <ul className="Info-ul">
-                    <li className='Info-list'> {swim} </li>
-                    <li className='Info-list'> {age}</li>
-                    <li className='Info-list'> {mayor}</li>
+                    <li className='Info-list'> {age} </li>
+                    <li className='Info-list'> {exclusion} </li>
                 </ul>
             </div>
         </>

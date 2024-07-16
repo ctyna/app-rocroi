@@ -13,7 +13,7 @@ export const Footer = () => {
                     <div className="Footer-awards">
                         <img className='Footer-img' src={aenorImage} alt="Sello de calidad aenor" title='aenor' loading='lazy' />
                         <img className='Footer-img' src={biosphereImage} alt="Sello calidad Biosphere" title='Biosphere logo' loading='lazy' />
-                        <img className='Footer-img' src={travelersImage} alt="travelers choise 2023 " title='premio travelers choise' />
+                        <img className='Footer-img' src={travelersImage} alt="travelers choise 2023 " title='premio travelers choise' loading='lazy' />
 
                     </div>
                     <div className="Footer-links">
@@ -33,7 +33,7 @@ export const Footer = () => {
                     </div>
                     <div className="Footer-contact">
 
-                        <img src="../../src/assets/rocblanco.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Footer-logo" loading='eager' />
+                        <img src="../../src/assets/rocblanco.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Footer-logo" loading='lazy' />
 
                         <ul className="Footer-ul">
                             <li className="Footer-li">

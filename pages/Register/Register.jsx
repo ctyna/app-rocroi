@@ -8,6 +8,10 @@ export const Register = () => {
     const [registro, setRegistro] = useState(false)
     const formAnadir = useRef()
     const navigate = useNavigate()
+    
+    const {VITE_API}= import.meta.env
+
+
     const goLogin = () => {
         navigate('/')
     }
@@ -30,7 +34,7 @@ export const Register = () => {
             body: JSON.stringify(nuevo)
 
         }
-        await fetch('http://localhost:3000/register', options)
+        await fetch(`${VITE_API}/register`, options)
             .then(res => res.json())
             .then(data => setUsuarios(data),
                           setRegistro(true))

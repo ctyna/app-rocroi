@@ -60,7 +60,7 @@ const Article = (props) => {
                 <picture className="Top-picture">
                     <source srcSet={`/assets/${src}`} type="image/jpg" media="(max-width:1200px)"/>
                     <source srcSet={`/assets/${src_web}`} type="image/webp" media="(max-width:1200px)"/>
-                    <img className='Top-img' width={300} height={350} src={`/assets/${src}`} alt={alt} />
+                    <img className='Top-img' width={300} height={350} src={`/assets/${src}`} alt={alt} loading='lazy' />
                 </picture>
                 <div className="Top-text">
                     <h3 className="Top-h3"> {name} </h3>

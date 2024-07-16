@@ -3,9 +3,14 @@ import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const Reservation = () => {
-    const [completada, setCompletada] = useState(false);
-    const reservarActividad = useRef();
-    const navigate = useNavigate();
+    const [completada, setCompletada] = useState(false)
+    const reservarActividad = useRef()
+    const navigate = useNavigate()
+
+    
+    const {VITE_API} = import.meta.env
+
+    // POST RESERVA NUEVA
 
     const hacerReserva = async (e) => {
         e.preventDefault()
@@ -31,7 +36,7 @@ export const Reservation = () => {
             headers: { "Content-type": "application/json" }
         }
 
-        await fetch('http://localhost:3000/reservas', options)
+        await fetch(`${VITE_API}/reservas`, options)
             .then(res => res.json())
             .then(data => {
                 if (data) {
@@ -42,7 +47,7 @@ export const Reservation = () => {
             })
             .catch(err => console.log(err))
             .finally(() => controller.abort())
-    };
+    }
 
     const goReservas = () => {
         navigate('/reservas')
@@ -54,8 +59,8 @@ export const Reservation = () => {
             <form className="Reservas-form" onSubmit={hacerReserva} ref={reservarActividad}>
                 <div className="Reservas-wrapper">
                     <div className="Reservas-in">
-                        <h3>Actividad*</h3>
-                        <select className="Reservas-selector" name='actividad' defaultValue="Rafting" required >
+                        <label htmlFor="actividad">Actividad*</label>
+                        <select id="actividad" className="Reservas-selector" name='actividad' defaultValue="Rafting" required>
                             <option className='Reservas-option' value="Rafting">Rafting</option>
                             <option className='Reservas-option' value="Ferratas">Vías Ferratas</option>
                             <option className='Reservas-option' value="Globo">Vuelos en Globo</option>
@@ -67,27 +72,25 @@ export const Reservation = () => {
 
                     <div className="Reservas-in">
                         <label htmlFor="email">Correo electrónico*</label>
-                        <input type="email" className="Reservas-input" id="email" name='email'
-                            placeholder="holarocroi@hotmail.com" required
-                        />
+                        <input type="email" className="Reservas-input" id="email" name='email' placeholder="holarocroi@hotmail.com" required />
                     </div>
 
                     <div className="Reservas-in">
                         <label htmlFor="fecha">Selecciona la fecha*</label>
-                        <input type="date" className="Reservas-input" name='fecha' required />
+                        <input type="date" className="Reservas-input" id="fecha" name='fecha' required />
                     </div>
 
                     <div className="Reservas-in">
-                        <h3>Selecciona la hora*</h3>
-                        <select className="Reservas-selector" name='hora' defaultValue="9:00" required >
+                        <label htmlFor="hora">Selecciona la hora*</label>
+                        <select id="hora" className="Reservas-selector" name='hora' defaultValue="9:00" required>
                             <option className='Reservas-option' value="9:00">9:00</option>
                             <option className='Reservas-option' value="11:30">11:30</option>
                         </select>
                     </div>
 
                     <div className="Reservas-in">
-                        <h3>Número de personas*</h3>
-                        <select className="Reservas-selector" name='users' defaultValue="1" required>
+                        <label htmlFor="users">Número de personas*</label>
+                        <select id="users" className="Reservas-selector" name='users' defaultValue="1" required>
                             <option className='Reservas-option' value="1">1</option>
                             <option className='Reservas-option' value="2">2</option>
                             <option className='Reservas-option' value="3">3</option>
@@ -100,7 +103,7 @@ export const Reservation = () => {
             <div className="Reserva-completada">
                 {completada && (
                     <p className='Reserva-ok'>
-                        Reserva completada con éxito. Accede a tus reservas: 
+                        Reserva completada con éxito. Accede a tus reservas:
                         <span onClick={goReservas} className="Reservas-span"> Aquí </span>
                     </p>
                 )}

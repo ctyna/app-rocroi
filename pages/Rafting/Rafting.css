@@ -1,10 +1,10 @@
-.Rafting{
+.Activity{
     width: 75%;
     margin: auto;
     /* background-color: antiquewhite; */
 }
 
-.Rafting-section{
+.Activity-section{
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -13,11 +13,11 @@
    margin: 2rem auto;
     
 }
-.Rafting-h1{
+.Activity-h1{
     font-size: var(--h2);
     font-weight: bold;
 }
-.Rafting-img{
+.Activity-img{
     width: 60%;
     /* background-color: var(--amarillo); */
     margin: auto;
@@ -25,7 +25,10 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
 }
-.Rafting-p{
+.Activity-photo{
+    object-fit: cover;
+}
+.Activity-p{
     font-size: calc(var(--h3) + 0.3em);
     font-weight: 500;
 }
@@ -50,15 +53,23 @@ justify-content: flex-start;
 align-items: flex-start;
 
 }
-
+.Info-h2{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.Info-list{
+    padding: 0.5em;
+    font-size: 1em;
+    font-weight: 400;
+}
 
 /* Media quearies */
 
 @media (max-width :685px){
-  .Rafting-h2, .Reservas-h2{
+  .Activity-h1, .Reservas-h2{
     font-size: 1.8em;
   }
-  .Rafting-p{
+  .Activity-p{
     font-weight: 400;
     font-size: 1.2em;
   }
@@ -66,7 +77,7 @@ align-items: flex-start;
 
 
 @media (max-width :310px){
- .Rafting{
+ .Activity{
     width: 90%;
  }
   }

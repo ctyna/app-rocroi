@@ -1,11 +1,9 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './Header.css'
-import { useState, useEffect, createContext} from 'react'
+import { useState } from 'react'
 
-const HeaderContext = createContext()
 
 export const Header = () => {
-    const [actividades, setActividades] = useState([])
 
     // Menú responsive 
     const [menu, setMenu] = useState(false)
@@ -15,78 +13,56 @@ export const Header = () => {
     //    que sea h1, sino no)
     const location = useLocation()
 
-
     // LocalStorage cierre de sesión
     const navigate = useNavigate()
-    const cerrarSesión = () =>{
+    const cerrarSesión = () => {
         localStorage.removeItem('usuario')
         navigate('/')
     }
 
-    const pedirActividades = async () => {
-        let controller = new AbortController()
-        let options = {
-            method: 'get',
-            signal: controller.signal
-        }
-
-        await fetch('http://localhost:3000/principal', options)
-            .then(res => res.json())
-            .then(data => setActividades(data))
-            .catch(err => console.log(err))
-            .finally(() => controller.abort())
-    }
-
-
-
-
-
-    useEffect(() => {
-        pedirActividades()
-    }, [])
 
     return (
-        <HeaderContext.Provider value={{ actividades }}>
-            <>
-                <header className="Header">
-                    <div className="Header-wrapper">
-                        {location.pathname === '/principal' && (
-                            <h1 className='Header-h1'>RocRoi centro de deportes de aventura</h1>
-                        )}
+
+        <>
+            <header className="Header">
+                <div className="Header-wrapper">
+                    {location.pathname === '/principal' && (
+                        <h1 className='Header-h1'>RocRoi centro de deportes de aventura</h1>
+                    )}
 
 
-                        <img src="../../src/assets/roc_logo.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Header-logo" loading='eager' />
-                        {/*SVG para responsive + toogle */}
-                        <svg onClick={toogle} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="Header-svg" viewBox="0 0 16 16">
-                            <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                        </svg>
-                        {/* Booleano con la propiedad isActive */}
-                        <nav className={`Header-nav Nav ${menu ? 'isActive' : ''}`}>
-                            <ul className="Nav-ul">
-                                <li className="Nav-li">
-                                    <NavLink to='/principal'>Home</NavLink>
-                                </li>
-                                <li className="Nav-li">
-                                    <NavLink to="/actividades">Actividades</NavLink>
-                                </li>
-                                <li className="Nav-li">Centros</li>
-                                <li className="Nav-li">
-                                    <NavLink to='/reservas'>Reservas</NavLink>
-                                </li>
-                                <li onClick={cerrarSesión} className="Nav-li">
-                                    Cerrar sesión
-                                </li>
+                    <img src="../../src/assets/roc_logo.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Header-logo" loading='eager' />
+                    {/*SVG para responsive + toogle */}
+                    <svg onClick={toogle} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="Header-svg" viewBox="0 0 16 16">
+                        <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                    </svg>
+                    {/* Booleano con la propiedad isActive */}
+                    <nav className={`Header-nav Nav ${menu ? 'isActive' : ''}`}>
+                        <ul className="Nav-ul">
+                            <li className="Nav-li">
+                                <NavLink to='/principal'>Home</NavLink>
+                            </li>
+                            <li className="Nav-li">
+                                <NavLink to="/actividades">Actividades</NavLink>
+                            </li>
+
+                            <li className="Nav-li">
+                                <NavLink to='/reservas'>Reservas</NavLink>
+                            </li>
+                            <li onClick={cerrarSesión} className="Nav-li">
+                                Cerrar sesión
+                            </li>
 
 
-                            </ul>
-                        </nav>
-                    </div>
+                        </ul>
+                    </nav>
+                </div>
 
 
-                </header>
+            </header>
 
 
-            </>
-        </HeaderContext.Provider>
+        </>
+
     )
 }

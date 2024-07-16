@@ -1,10 +1,15 @@
 import './CardActividad.css'
 import  { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+
+
 // Este componente esta creado a partir de TOPActividades ya que quiero reutilizarlo en actividades general
 
 export const Card = () => {
     const [card, setCard] = useState([])
+
+  
+    const {VITE_API} = import.meta.env
 
     const pedirActividad = async () => {
         let controller = new AbortController()
@@ -13,7 +18,7 @@ export const Card = () => {
             signal: controller.signal
         }
 
-        await fetch('http://localhost:3000/principal', options)
+        await fetch(`${VITE_API}/principal`, options)
             .then(res => res.json())
             .then(data => setCard(data))
             .catch(err => console.log(err))

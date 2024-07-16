@@ -1,35 +1,32 @@
-import { createContext, useEffect, useState } from 'react'
+import './Parapente.css'
+import { useEffect, useState } from 'react'
 import { Footer } from '../../Components/Footer/Footer'
 import { Header } from '../../Components/Header/Header'
 import { Reservation } from '../../Components/Reservation/Reservation'
 
-import './ViasFerratas.css'
 
-
-
-export const ViasFerratas = () => {
-
-    const [ferrata, setFerrata] = useState([])
-
+export const Parapente = () =>{
+ 
+    const [parapente, setParapente] = useState([])
+    
     const {VITE_API} = import.meta.env
-
-    const pedirFerrata = async () => {
+    const pedirParapente = async () => {
         let controller = new AbortController()
         let options = {
             method: 'get',
             signal: controller.signal
         }
 
-        await fetch(`${VITE_API}/actividades/vias_ferratas`, options)
+        await fetch(`${VITE_API}/actividades/parapente`, options)
             .then(res => res.json())
-            .then(data => setFerrata(data))
+            .then(data => setParapente(data))
             .catch(err => console.log(err))
             .finally(() => controller.abort())
     }
 
 
     useEffect(() => {
-        pedirFerrata()
+        pedirParapente()
     }, [])
 
     return (
@@ -38,8 +35,8 @@ export const ViasFerratas = () => {
             <Header />
             <main className="Activity">
                 <div className="Activity-wrapper">
-                    {ferrata.length === 0 && <p>Cargando información</p>}
-                    {ferrata.length !== 0 && ferrata.map((eachFerrata) =>
+                    {parapente.length === 0 && <p>Cargando información</p>}
+                    {parapente.length !== 0 && parapente.map((eachFerrata) =>
                         <Principal key={eachFerrata._id} {...eachFerrata} />)}
 
 
@@ -79,24 +76,23 @@ const Imagenes = (props) => {
     const { general, specific, view } = props
     return (
         <>
-            <img className='Activity-photo' width={400} height={400} src={`/assets/${general}`} alt="general"  loading='lazy'/>
-            <img className='Activity-photo' width={400} height={400} src={`/assets/${specific}`} alt="specific" loading='lazy' />
-            <img className='Activity-photo' width={400} height={400} src={`/assets/${view}`} alt="view" loading='lazy' />
+            <img className='Activity-photo' width={400} height={400} src={`/assets/${general}`} alt="general" loading='lazy' />
+            <img className='Activity-photo' width={400} height={400}    src={`/assets/${specific}`} alt="specific" loading='lazy' />
+            <img className='Activity-photo' width={400} height={400}  src={`/assets/${view}`} alt="view" loading='lazy' />
         </>
     )
 }
 
 const Incluido = (props) => {
-    const { guide, clothes, transport, insurance } = props
+    const { guide, transport, insurance } = props
     return (
         <>
             <div className="Info-container">
                 <h2 className="Info-h2">Incluido en el precio</h2>
                 <ul className="Info-ul">
-                    <li className='Info-list'> {guide} </li>
-                    <li className='Info-list'> {clothes} </li>
-                    <li className='Info-list'> {transport} </li>
-                    <li className='Info-list'> {insurance} </li>
+                    <li className="Info-list"> {guide} </li>
+                    <li className="Info-list"> {transport} </li>
+                    <li className="Info-list"> {insurance} </li>
                 </ul>
             </div>
         </>
@@ -110,8 +106,8 @@ const Dificultad = (props) => {
             <div className="Info-container">
                 <h2 className="Info-h2">Dificultad de la actividad</h2>
                 <ul className="Info-ul">
-                    <li className='Info-list'> {level} </li>
-                    <li className='Info-list'> {duration} </li>
+                    <li className="Info-list"> {level} </li>
+                    <li className="Info-list"> {duration} </li>
                 </ul>
             </div>
         </>
@@ -119,14 +115,14 @@ const Dificultad = (props) => {
 }
 
 const Elementos = (props) => {
-    const { dress, cream } = props
+    const { dress, shoes } = props
     return (
         <>
             <div className="Info-container">
                 <h2 className="Info-h2">Qué hay que llevar</h2>
                 <ul className="Info-ul">
-                    <li className='Info-list'> {dress} </li>
-                    <li className='Info-list'> {cream} </li>
+                    <li className="Info-list"> {dress} </li>
+                    <li className="Info-list"> {shoes} </li>
                 </ul>
             </div>
         </>
@@ -134,16 +130,15 @@ const Elementos = (props) => {
 }
 
 const Apto = (props) => {
-    const { swim, age, mayor, weight } = props
+    const { age, mayor, exclusion } = props
     return (
         <>
             <div className="Info-container">
                 <h2 className="Info-h2">Quién puede realizar esta actividad</h2>
                 <ul className="Info-ul">
-                    <li className='Info-list'> {swim} </li>
-                    <li className='Info-list'> {age} </li>
-                    <li className='Info-list'> {mayor} </li>
-                    <li className='Info-list'> {weight} </li>
+                    <li className="Info-list"> {age} </li>
+                    <li className="Info-list"> {mayor} </li>
+                    <li className="Info-list"> {exclusion} </li>
                 </ul>
             </div>
         </>

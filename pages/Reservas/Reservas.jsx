@@ -10,7 +10,8 @@ export const Reservas = () => {
     const [reservas, setReservas] = useState([])
     const actualizarReserva = useRef()
 
-
+   
+    const {VITE_API} = import.meta.env
 
     // Petición de las reservas en la API
 
@@ -21,7 +22,7 @@ export const Reservas = () => {
             signal: controller.signal
         }
 
-        await fetch('http://localhost:3000/reservas', options)
+        await fetch(`${VITE_API}/reservas`, options)
             .then(res => res.json())
             .then(data => setReservas(data))
             .catch(err => console.log(err))
@@ -37,7 +38,7 @@ export const Reservas = () => {
             signal: controller.signal
         }
 
-        await fetch(`http://localhost:3000/reservas/${_id}`, options)
+        await fetch(`${VITE_API}/reservas/${_id}`, options)
             .then(res => res.json())
             .then(data => setReservas(data))
             .catch(err => console.log(err.message))
@@ -54,8 +55,8 @@ export const Reservas = () => {
         const fecha = form.elements['fecha'].value
         const hora = form.elements['hora'].value
         const date = `${fecha} ${hora}`
-      
-        
+
+
 
 
         const actualizada = {
@@ -76,7 +77,7 @@ export const Reservas = () => {
             body: JSON.stringify(actualizada)
         }
 
-        await fetch(`http://localhost:3000/reservas`, options)
+        await fetch(`${VITE_API}/reservas`, options)
             .then(res => res.json())
             .then(data => setReservas(data))
             .catch(err => console.log(err))
@@ -87,12 +88,12 @@ export const Reservas = () => {
 
     }
 
-
+    // Botón actualización de los datos
     const actualizarBtn = (_id) => {
         const buscar = reservas.find(reservas => reservas._id === _id)
-        
 
-        
+
+
 
         const { current: formulario } = actualizarReserva
         formulario.elements['id'].value = buscar._id
@@ -104,13 +105,9 @@ export const Reservas = () => {
     }
 
 
-
-
     useEffect(() => {
         pedirReserva()
     }, [])
-
-
 
 
     return (
@@ -129,21 +126,17 @@ export const Reservas = () => {
                             {reservas.length != 0 && reservas.map(eachReserva =>
                                 <DatosReserva key={eachReserva._id}{...eachReserva} />
                             )}
-
-
                         </div>
                     </div>
                     <ActualizarReserva />
                 </main>
-                <Footer/>
-
+                <Footer />
             </>
         </ReservaContext.Provider>
     )
-
 }
 
-
+// Datos de la reserva del usuario
 const DatosReserva = (props) => {
     const { deleteReserva, actualizarBtn } = useContext(ReservaContext)
     const { activity, email, date, users, _id, hour } = props
@@ -154,32 +147,33 @@ const DatosReserva = (props) => {
     return (
         <>
             <ul className="Reserva-ul">
-                <li className="Reserva-li"> <span className='Reserva-span'>Actividad: </span>  {activity} </li>
                 <li className="Reserva-li">
-                  <span className='Reserva-span'>Correo electrónico de la reserva: </span> {email} 
+                    <span className='Reserva-span'>Actividad: </span> {activity}
                 </li>
-
-                <li className="Reserva-li"> <span className="Reserva-span">Fecha: </span>  {soloFecha}</li>
                 <li className="Reserva-li">
-                    <h2 className="Reserva-h2"><span className="Reserva-span">Hora:</span> {hour} </h2>
+                    <span className='Reserva-span'>Correo electrónico de la reserva: </span> {email}
                 </li>
-                <li className="Reserva-li"> <span className="Reserva-span">Número de personas : </span>  {users} </li>
-                <div className="Reserva-btns">
+                <li className="Reserva-li">
+                    <span className="Reserva-span">Fecha: </span> {soloFecha}
+                </li>
+                <li className="Reserva-li">
+                    <h2 className="Reserva-h2">
+                        <span className="Reserva-span">Hora:</span> {hour}
+                    </h2>
+                </li>
+                <li className="Reserva-li">
+                    <span className="Reserva-span">Número de personas: </span> {users}
+                </li>
+                <li className="Reserva-li Reserva-btns">
                     <button onClick={() => actualizarBtn(_id)} className='Reserva-btnacc'>Actualizar</button>
                     <button onClick={() => deleteReserva(_id)} className='Reserva-btnacc'>Eliminar</button>
-
-
-                </div>
+                </li>
             </ul>
-
-
-
-
 
         </>
     )
 }
-
+// Formulario de actualización de la reserva
 const ActualizarReserva = () => {
     const { putDatos, actualizarReserva } = useContext(ReservaContext)
 
@@ -194,40 +188,38 @@ const ActualizarReserva = () => {
                         </div>
 
                         <div className="Reservas-in">
-                            <h3>Actividad*</h3>
-                            <select className="Reservas-selector" name='actividad' defaultValue="Rafting" required >
+                            <label htmlFor="actividad">Actividad*</label>
+                            <select className="Reservas-selector" id="actividad" name='actividad' defaultValue="Rafting" required>
                                 <option className='Reservas-option' value="Rafting">Rafting</option>
                                 <option className='Reservas-option' value="Ferratas">Vías Ferratas</option>
                                 <option className='Reservas-option' value="Globo">Vuelos en Globo</option>
                                 <option className='Reservas-option' value="Parapente">Parapente</option>
-                                <option className='Reservas-option' value="Barranquismo">Baranquismo</option>
+                                <option className='Reservas-option' value="Barranquismo">Barranquismo</option>
                                 <option className='Reservas-option' value="Escalada">Escalada</option>
                             </select>
                         </div>
 
                         <div className="Reservas-in">
                             <label htmlFor="email">Correo electrónico*</label>
-                            <input type="email" className="Reservas-input" id="email" name='email'
-                                placeholder="holarocroi@hotmail.com" required
-                            />
+                            <input type="email" className="Reservas-input" id="email" name='email' placeholder="holarocroi@hotmail.com" required />
                         </div>
 
                         <div className="Reservas-in">
-                            <label htmlFor="email">Selecciona la fecha*</label>
-                            <input type="date" className="Reservas-input" name='fecha' required />
-
+                            <label htmlFor="fecha">Selecciona la fecha*</label>
+                            <input type="date" className="Reservas-input" id="fecha" name='fecha' required />
                         </div>
 
                         <div className="Reservas-in">
-                            <h3>Selecciona la hora*</h3>
-                            <select className="Reservas-selector" name='hora' required >
+                            <label htmlFor="hora">Selecciona la hora*</label>
+                            <select className="Reservas-selector" id="hora" name='hora' required>
                                 <option className='Reservas-option' value="9:00">9:00</option>
                                 <option className='Reservas-option' value="11:30">11:30</option>
                             </select>
                         </div>
+
                         <div className="Reservas-in">
-                            <h3>Número de personas*</h3>
-                            <select className="Reservas-selector" name='users' required>
+                            <label htmlFor="users">Número de personas*</label>
+                            <select className="Reservas-selector" id="users" name='users' required>
                                 <option className='Reservas-option' value="1">1</option>
                                 <option className='Reservas-option' value="2">2</option>
                                 <option className='Reservas-option' value="3">3</option>
@@ -236,10 +228,8 @@ const ActualizarReserva = () => {
                         </div>
                     </div>
                     <input className="Reservas-btn" type="submit" value="Actualizar" />
-
                 </form>
             </div>
-
 
         </>
     )
