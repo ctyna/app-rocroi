@@ -51,23 +51,17 @@ export const Reservas = () => {
         e.preventDefault()
         const { current: form } = actualizarReserva
 
-
-        const fecha = form.elements['fecha'].value
-        const hora = form.elements['hora'].value
+        const fecha = form['fecha'].value
+        const hora = form['hora'].value
         const date = `${fecha} ${hora}`
-
-
-
-
+    
         const actualizada = {
-
-            id: form.elements['id'].value,
-            activity: form.elements['actividad'].value,
-            email: form.elements['email'].value,
+            id: form['id'].value,
+            activity: form['actividad'].value,
+            email: form['email'].value,
             date,
-            hour: form.elements['hora'].value,
-            users: form.elements['users'].value
-
+            hour: form['hora'].value,
+            users: form['users'].value
         }
 
         let controller = new AbortController()
