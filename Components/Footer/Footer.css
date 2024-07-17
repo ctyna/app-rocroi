@@ -50,3 +50,12 @@
     transform: scaleX(1);
     background-color: var(--blanco);
 }
+
+/* Media */
+
+@media (max-width: 685px) {
+   .Footer-wrapper{
+    width: 90%;
+   }
+
+}
