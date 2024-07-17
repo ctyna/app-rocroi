@@ -12,11 +12,12 @@
 }
 
 .Top-article {
+    background-color: aqua;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: flex-start;
-    min-height: 500px;
+    min-height: 31.25rem;
     background-color: var(--gris);
     border-radius: 1.25rem;
     transition: box-shadow 0.5 ease;
