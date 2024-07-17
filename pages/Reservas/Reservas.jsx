@@ -10,8 +10,8 @@ export const Reservas = () => {
     const [reservas, setReservas] = useState([])
     const actualizarReserva = useRef()
 
-   
-    const {VITE_API} = import.meta.env
+
+    const { VITE_API } = import.meta.env
 
     // Petición de las reservas en la API
 
@@ -54,7 +54,7 @@ export const Reservas = () => {
         const fecha = form['fecha'].value
         const hora = form['hora'].value
         const date = `${fecha} ${hora}`
-    
+
         const actualizada = {
             id: form['id'].value,
             activity: form['actividad'].value,
@@ -86,14 +86,14 @@ export const Reservas = () => {
     const actualizarBtn = (_id) => {
         const buscar = reservas.find(reservas => reservas._id === _id)
 
-const { current: formulario } = actualizarReserva
-       
+        const { current: formulario } = actualizarReserva
+
         formulario['id'].value = buscar._id,
-        formulario['actividad'].value = buscar.activity,
-        formulario['email'].value = buscar.email,
-        formulario['fecha'].value = buscar.date.split(' ')[0],
-        formulario['hora'].value = buscar.hour,
-        formulario['users'].value = buscar.users
+            formulario['actividad'].value = buscar.activity,
+            formulario['email'].value = buscar.email,
+            formulario['fecha'].value = buscar.date.split(' ')[0],
+            formulario['hora'].value = buscar.hour,
+            formulario['users'].value = buscar.users
     }
 
 
