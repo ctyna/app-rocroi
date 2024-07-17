@@ -86,16 +86,14 @@ export const Reservas = () => {
     const actualizarBtn = (_id) => {
         const buscar = reservas.find(reservas => reservas._id === _id)
 
-
-
-
-        const { current: formulario } = actualizarReserva
-        formulario.elements['id'].value = buscar._id
-        formulario.elements['actividad'].value = buscar.activity
-        formulario.elements['email'].value = buscar.email
-        formulario.elements['fecha'].value = buscar.date.split(' ')[0]
-        formulario.elements['hora'].value = buscar.hour
-        formulario.elements['users'].value = buscar.users
+const { current: formulario } = actualizarReserva
+       
+        formulario['id'].value = buscar._id,
+        formulario['actividad'].value = buscar.activity,
+        formulario['email'].value = buscar.email,
+        formulario['fecha'].value = buscar.date.split(' ')[0],
+        formulario['hora'].value = buscar.hour,
+        formulario['users'].value = buscar.users
     }
 
 
