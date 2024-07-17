@@ -81,7 +81,7 @@ export const Login = () => {
                 <div className="Login-wrapper">
                     <div className="Login-info">
                         <h1 className='Login-h1'>RocRoi centro de deportes de aventura</h1>
-                        <img src="/src/assets/rocroi_logo.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Login-logo" loading='eager' />
+                        <img src="/assets/rocroi_logo.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Login-logo" loading='eager' />
                         <h2 className='Login-h2' >Iniciar sesión</h2>
 
                         <form ref={inicioSesion} onSubmit={postLogin} className='Login-form'>
@@ -103,8 +103,8 @@ export const Login = () => {
                     </div>
                     <div className="Login-asset">
                         <video className='Login-video' autoPlay muted playsInline loop  >
-                            <source src="/src/assets/rafting_clasico.mp4" type='video/mp4' />
-                            <source src="/src/assets/rafting_clasico.webm" type='video/webm' />
+                            <source src="/assets/rafting_clasico.mp4" type='video/mp4' />
+                            <source src="/assets/rafting_clasico.webm" type='video/webm' />
 
                         </video>
 
