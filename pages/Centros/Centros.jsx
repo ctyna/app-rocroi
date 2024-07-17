@@ -23,9 +23,9 @@ export const Centros = () => {
                     </section>
 
                 <div className="Centros-image">
-                    <img src="../../src/assets/mar.jpg" width={400} height={711} alt="Fotografía del mar en menorca" title='Mar' className="Centros-img" loading='lazy' />
-                    <img src="../../src/assets/actividad.jpg"  width={400} height={711} alt="Fotografía de gente haciendo actividades en el mar" title='Mar kayak' className="Centros-img" loading='lazy' />
-                    <img src="../../src/assets/montana.jpg"  width={400} height={711} alt="Fotografía del valle de TENA " title='Montaña' className="Centros-img" loading='lazy' />
+                    <img src="/assets/mar.jpg" width={400} height={711} alt="Fotografía del mar en menorca" title='Mar' className="Centros-img" loading='lazy' />
+                    <img src="/assets/actividad.jpg"  width={400} height={711} alt="Fotografía de gente haciendo actividades en el mar" title='Mar kayak' className="Centros-img" loading='lazy' />
+                    <img src="/assets/montana.jpg"  width={400} height={711} alt="Fotografía del valle de TENA " title='Montaña' className="Centros-img" loading='lazy' />
                 </div>
 
 
