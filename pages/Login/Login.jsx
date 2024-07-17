@@ -103,8 +103,8 @@ export const Login = () => {
                     </div>
                     <div className="Login-asset">
                         <video className='Login-video' autoPlay muted playsInline loop  >
-                            <source src="../../src/assets/rafting_clasico.mp4" type='video/mp4' />
-                            <source src="../../src/assets/rafting_clasico.webm" type='video/webm' />
+                            <source src="/src/assets/rafting_clasico.mp4" type='video/mp4' />
+                            <source src="/src/assets/rafting_clasico.webm" type='video/webm' />
 
                         </video>
 
