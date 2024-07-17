@@ -4,8 +4,8 @@ import './Principal.css'
 import { TopActividades } from '../../Components/TopActividades/TopActividades'
 import { Footer } from '../../Components/Footer/Footer'
 
-import rocroiMp4 from '../../src/assets/rocroi_banner.mp4'
-import rocroiWebm from '../../src/assets/rocroi_banner.webm'
+import rocroiMp4 from '/assets/rocroi_banner.mp4'
+import rocroiWebm from '/assets/rocroi_banner.webm'
 
 
 export const Principal = () => {
