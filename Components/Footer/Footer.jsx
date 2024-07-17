@@ -11,9 +11,9 @@ export const Footer = () => {
             <footer className="Footer">
                 <div className="Footer-wrapper">
                     <div className="Footer-awards">
-                        <img className='Footer-img' width={279} height={267} src={aenorImage} alt="Sello de calidad aenor" title='aenor' loading='lazy' />
-                        <img className='Footer-img' width={800} height={800} src={biosphereImage} alt="Sello calidad Biosphere" title='Biosphere logo' loading='lazy' />
-                        <img className='Footer-img' width={500} height={500}  src={travelersImage} alt="travelers choise 2023 " title='premio travelers choise' loading='lazy' />
+                        <img className='Footer-img' src={aenorImage} alt="Sello de calidad aenor" title='aenor' loading='lazy' />
+                        <img className='Footer-img' src={biosphereImage} alt="Sello calidad Biosphere" title='Biosphere logo' loading='lazy' />
+                        <img className='Footer-img' src={travelersImage} alt="travelers choise 2023 " title='premio travelers choise' loading='lazy' />
 
                     </div>
                     <div className="Footer-links">
