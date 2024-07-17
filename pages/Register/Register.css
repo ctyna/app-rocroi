@@ -127,9 +127,9 @@
 
     .Register-wrapper {
         /* background-color: aqua; */
-        width: 100%;
+        width: 90%;
         margin: auto;
-        padding: 2rem 0;
+        padding: 2rem ;
         display: grid;
         border-radius: 0rem;
         background: white;
