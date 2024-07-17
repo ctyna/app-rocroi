@@ -84,7 +84,11 @@
 
 
 @media (max-width: 685px) {
+    .Top{
+        width: 90%;
+        align-items: center;
+    }
     .Top-p{
-        height: 12vh;
+        height: 15vh;
     }
 }
