@@ -73,8 +73,9 @@
 /* Menú desplegable */
 @media (max-width: 685px) {
     .Header {
+        background-color: aqua;
         width: 90%;
-        padding: 1.5rem;
+        padding: 1rem;
         position: relative;
     }
 
