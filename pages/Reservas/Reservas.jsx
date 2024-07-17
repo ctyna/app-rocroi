@@ -110,7 +110,7 @@ export const Reservas = () => {
                 <main className="Main-reservas Reserva">
                     <div className="Reserva-wrapper">
                         <h1 className="Reserva-h1">
-                            Mis reservas
+                            Reservas
                         </h1>
                         <div className="Reserva-container">
 

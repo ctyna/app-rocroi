@@ -76,6 +76,15 @@
     }
 }
 
+@media (max-width :685px){
+    .Reserva-h1, .Reservas-h2{
+      font-size: 1.8em;
+    }
+
+  }
+  
+  
+
 @media (max-width :310px){
     .Reserva{
        width: 90%;

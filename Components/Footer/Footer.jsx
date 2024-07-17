@@ -36,7 +36,7 @@ export const Footer = () => {
                     </div>
                     <div className="Footer-contact">
 
-                        <img src="/assets/rocblanco.png" width={130} height={32}  alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Footer-logo" loading='lazy' />
+                        <img src="/assets/rocblanco.png"  alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Footer-logo" loading='lazy' />
 
                         <ul className="Footer-ul">
                             <li className="Footer-li">
