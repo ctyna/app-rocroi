@@ -17,6 +17,10 @@
 }
 /* Media quearies */
 @media (max-width : 685px){
+    .Actividades{
+        width: 90%;
+        align-items: center;
+    }
 .Actividades-h1{
     font-size:calc(var(--h3) + 0.5em);
 }
