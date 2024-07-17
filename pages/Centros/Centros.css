@@ -29,3 +29,16 @@
 .Centros-img{
     object-fit: cover;
 }
+
+/* Media quearies */
+
+@media (max-width :685px){
+    .Centros-h1, .Centros-h2{
+      font-size: 1.8em;
+    }
+    .Centros-p{
+      font-weight: 400;
+      font-size: 1.2em;
+    }
+  }
+  
