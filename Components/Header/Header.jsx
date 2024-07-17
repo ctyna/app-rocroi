@@ -31,7 +31,7 @@ export const Header = () => {
                     )}
 
 
-                    <img src="../../src/assets/roc_logo.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Header-logo" loading='eager' />
+                    <img src="/assets/roc_logo.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Header-logo" loading='eager' />
                     {/*SVG para responsive + toogle */}
                     <svg onClick={toogle} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="Header-svg" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
