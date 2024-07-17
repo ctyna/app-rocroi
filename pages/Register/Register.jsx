@@ -54,7 +54,7 @@ export const Register = () => {
                 <div className="Register-wrapper">
                     <div className="Register-info">
                         <h1 className='Register-h1'>RocRoi centro de deportes de aventura</h1>
-                        <img src="../../src/assets/rocroi_logo.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Register-logo" loading='eager' />
+                        <img src="/assets/rocroi_logo.png" alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Register-logo" loading='eager' />
                         <h2 className='Register-h2' >Registro usuario</h2>
 
 
