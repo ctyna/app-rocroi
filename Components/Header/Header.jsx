@@ -52,15 +52,12 @@ export const Header = () => {
                             <li className="Nav-li">
                                 <NavLink to='/reservas'>Reservas</NavLink>
                             </li>
-                           
-
-                        </ul>
-                        <ul className="Nav-ul">
-                        <li onClick={cerrarSesión} className="Nav-li">
+                            <li onClick={cerrarSesión} className="Nav-li">
                                 Cerrar sesión
                             </li>
 
                         </ul>
+                        
                     </nav>
                 </div>
 
