@@ -27,7 +27,7 @@
 
 .Header-logo {
     /* background-color: aqua; */
- 
+    width: 50%;
     object-fit: contain;
 
 }
