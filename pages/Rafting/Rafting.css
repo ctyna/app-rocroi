@@ -80,6 +80,9 @@ align-items: flex-start;
  .Activity{
     width: 90%;
  }
+ .Activity-img{
+    width: 80%;
+ }
   }
   
   
