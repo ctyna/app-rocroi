@@ -11,9 +11,9 @@ export const Footer = () => {
             <footer className="Footer">
                 <div className="Footer-wrapper">
                     <div className="Footer-awards">
-                        <img className='Footer-img' src={aenorImage} alt="Sello de calidad aenor" title='aenor' loading='lazy' />
-                        <img className='Footer-img' src={biosphereImage} alt="Sello calidad Biosphere" title='Biosphere logo' loading='lazy' />
-                        <img className='Footer-img' src={travelersImage} alt="travelers choise 2023 " title='premio travelers choise' loading='lazy' />
+                        <img className='Footer-img' width={279} height={267} src={aenorImage} alt="Sello de calidad aenor" title='aenor' loading='lazy' />
+                        <img className='Footer-img' width={200} height={200} src={biosphereImage} alt="Sello calidad Biosphere" title='Biosphere logo' loading='lazy' />
+                        <img className='Footer-img' width={500} height={500}  src={travelersImage} alt="travelers choise 2023 " title='premio travelers choise' loading='lazy' />
 
                     </div>
                     <div className="Footer-links">
@@ -36,7 +36,7 @@ export const Footer = () => {
                     </div>
                     <div className="Footer-contact">
 
-                        <img src="/assets/rocblanco.png"  alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Footer-logo" loading='lazy' />
+                        <img src="/assets/rocblanco.png" width={500} height={32} alt="roc roi sitio dónde hay muchas actividades de aventura" title='ROCROI centro actividades' className="Footer-logo" loading='lazy' />
 
                         <ul className="Footer-ul">
                             <li className="Footer-li">
