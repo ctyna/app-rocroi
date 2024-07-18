@@ -40,7 +40,7 @@ export const Card = () => {
                     <picture className="Card-picture">
                         <source srcSet={`/assets/${eachCard.src}`} type="image/jpg" media="(max-width:1200px)" />
                         <source srcSet={`/assets/${eachCard.src_web}`} type="image/webp" media="(max-width:1200px)" />
-                        <img className='Card-img' width={300} height={350} src={`/assets/${eachCard.src}`} alt={eachCard.alt} />
+                        <img className='Card-img' width={300} height={350} src={`/assets/${eachCard.src_web}`} alt={eachCard.alt} />
                     </picture>
                     <div className="Card-text">
                         <h2 className="Card-h2"> {eachCard.name} </h2>
