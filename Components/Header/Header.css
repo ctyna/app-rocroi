@@ -21,10 +21,14 @@
 .Header-h1 {
     display: none;
 }
+.Header-container{
+    width: 100%;
+}
 
 .Header-logo {
     /* background-color: aqua; */
     width: 20%;
+    object-fit: contain;
 
 }
 
