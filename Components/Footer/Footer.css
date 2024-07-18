@@ -33,7 +33,7 @@
 .Footer-img , .Footer-logo{
     
     width: 25%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .Footer-li::after {
