@@ -4,6 +4,7 @@ import { Footer } from '../../Components/Footer/Footer'
 import { Header } from '../../Components/Header/Header'
 import { Reservation } from '../../Components/Reservation/Reservation'
 
+// get Barranquismo
 
 export const Barranquismo = () =>{
  

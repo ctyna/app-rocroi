@@ -91,7 +91,7 @@ export const Login = () => {
                             <input type="password" name='pass' placeholder='Contraseña' className='Login-input' required/>
                             <input type="submit" value="Iniciar sesión"
                                 className='Login-submit' />
-
+{/* Si el usuario no tiene cuenta se pude registrar */}
                             <h3 className='Login-h3'>¿No tienes una cuenta?
                                 <span className='Login-span' onClick={goRegister}>  Regístrate</span></h3>
 
@@ -120,6 +120,7 @@ export const Login = () => {
     )
 }
 
+// Mensaje de error del login
 
 const MensajeError = () => {
     return (

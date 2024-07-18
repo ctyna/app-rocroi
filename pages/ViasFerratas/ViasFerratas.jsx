@@ -5,7 +5,7 @@ import { Reservation } from '../../Components/Reservation/Reservation'
 
 import './ViasFerratas.css'
 
-
+// Get vías ferratas y sus apartados
 
 export const ViasFerratas = () => {
 

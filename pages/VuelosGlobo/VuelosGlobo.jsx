@@ -5,7 +5,7 @@ import { Header } from '../../Components/Header/Header'
 import { Reservation } from '../../Components/Reservation/Reservation'
 import './VuelosGlobo.css'
 
-
+// Get vuelo en globo y  sus apartados
 
 export const VuelosGlobo = () =>{
  

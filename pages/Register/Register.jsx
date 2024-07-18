@@ -11,7 +11,7 @@ export const Register = () => {
     
     const {VITE_API}= import.meta.env
 
-
+// Navegar a LOGIN de nuevo para acceder a la APP
     const goLogin = () => {
         navigate('/')
     }

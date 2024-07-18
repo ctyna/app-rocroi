@@ -52,7 +52,7 @@ export const Reservation = () => {
     const goReservas = () => {
         navigate('/reservas')
     }
-
+// Formulario de la reserva
     return (
         <div className="Reservas">
             <h2 className="Reservas-h2">Reserva de la actividad</h2>

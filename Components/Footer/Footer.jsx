@@ -4,7 +4,7 @@ import aenorImage from '../../src/assets/aenor.webp';
 import biosphereImage from '../../src/assets/biosphere.png';
 import travelersImage from '../../src/assets/travelers.gif';
 
-
+// Footer para toda la APP
 export const Footer = () => {
     return (
         <>
