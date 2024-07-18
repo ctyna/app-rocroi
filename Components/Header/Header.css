@@ -25,6 +25,7 @@
 .Header-logo {
     /* background-color: aqua; */
     width: 12%;
+    object-fit: contain;
 }
 
 .Header-svg {
