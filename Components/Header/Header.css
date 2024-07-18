@@ -22,12 +22,12 @@
     display: none;
 }
 .Header-container{
-    width: 12%;
+    width:50%;
 }
 
 .Header-logo {
     /* background-color: aqua; */
-    width: 20%;
+ 
     object-fit: contain;
 
 }
