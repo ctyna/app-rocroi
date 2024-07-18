@@ -73,6 +73,9 @@ align-items: flex-start;
     font-weight: 400;
     font-size: 1.2em;
   }
+  .Activity-img{
+    width: 80%;
+ }
 }
 
 
@@ -80,9 +83,7 @@ align-items: flex-start;
  .Activity{
     width: 90%;
  }
- .Activity-img{
-    width: 80%;
- }
+
   }
   
   
