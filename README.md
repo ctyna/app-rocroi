@@ -1,4 +1,4 @@
-# 💫 About Me:
+# 💫 About the Project:
 This is my project based on the RocRoi company of sport adventure activities throughout Spain to connect <br>with nature and sport in a safe way. <br>My project is based on the redesign of the website. <br>For the CEI school with the collaboration of the teacher Eduardo Fierro.
 
 
@@ -11,3 +11,12 @@ This is my project based on the RocRoi company of sport adventure activities thr
 [![](https://visitcount.itsvg.in/api?id=ctyna&icon=0&color=0)](https://visitcount.itsvg.in)
 
 
+
+# Overview
+
+## Components :
+
+For this RocRoi website I recreated:
+
+### [The Login Page:](https://app-rocroi.vercel.app/)
+![image](https://github.com/ctyna/app-rocroi/blob/main/src/assets/Login.png)
