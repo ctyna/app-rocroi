@@ -20,3 +20,13 @@ For this RocRoi website I recreated:
 
 ### [The Login Page:](https://app-rocroi.vercel.app/)
 ![image](https://github.com/ctyna/app-rocroi/blob/main/src/assets/Login.png)
+
+
+### [The Main Page:](https://app-rocroi.vercel.app/principal)
+![image](https://github.com/ctyna/app-rocroi/blob/main/src/assets/prin.png)
+
+
+
+### [Component: Top activities](https://app-rocroi.vercel.app/principal)
+![image](https://github.com/ctyna/app-rocroi/blob/main/src/assets/topex.png)
+
