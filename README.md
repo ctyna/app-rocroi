@@ -30,3 +30,19 @@ For this RocRoi website I recreated:
 ### [Component: Top activities](https://app-rocroi.vercel.app/principal)
 ![image](https://github.com/ctyna/app-rocroi/blob/main/src/assets/topex.png)
 
+### [The Reservations page](https://app-rocroi.vercel.app/reservas)
+![image](https://github.com/ctyna/app-rocroi/blob/main/src/assets/reserv.png)
+
+
+
+# Author
+
+- Website - [Cristina Farrés](https://cristinafarres.com/)
+- Github - [Ctyna](https://github.com/ctyna)
+
+# Acknowledgments
+
+- [Edu Fierro](https://www.youtube.com/c/EduardoFierroPro)
+
+
+
